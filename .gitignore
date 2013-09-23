@@ -23,4 +23,6 @@ hello
 # nimrod generated code
 nimcache/*.c
 
+*.class
+
 .tup/
