@@ -22,3 +22,5 @@ hello
 
 # nimrod generated code
 nimcache/*.c
+
+.tup/
