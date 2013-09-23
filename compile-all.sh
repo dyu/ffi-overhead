@@ -1,5 +1,5 @@
 #!/bin/sh
 
-tup upd && ./compile-nimrod.sh && ./compile-java.sh && go build hello.go
+tup upd && cd nimcache && ./compile-nimrod.sh && cd ../jhello && ./compile-java.sh && cd .. && go build hello.go
 
 
