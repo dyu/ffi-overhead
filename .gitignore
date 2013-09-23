@@ -15,3 +15,7 @@
 *.exe
 *.out
 *.app
+
+c_hello
+nim_hello
+c_hello
