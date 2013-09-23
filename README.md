@@ -14,19 +14,18 @@ Requirements on the exec path:
 - go
 
 To initialize, exec:
-tup init
+- tup init
 
-// begin workaround for go (I've to figure out how to pass rpath to go)
-tup upd
-cd newplus
-sudo ln -s $PWD/libnewplus.so /usr/lib/libnewplus.so
-// end
+Workaround for go (I've to figure out how to pass rpath to go)
+- tup upd
+- cd newplus
+- sudo ln -s $PWD/libnewplus.so /usr/lib/libnewplus.so
 
 To compile, exec:
-./compile-all.sh
+- ./compile-all.sh
 
 To run, exec:
-./run-all.sh
+- ./run-all.sh
 
 The main files:
 - newplus/plus.c
