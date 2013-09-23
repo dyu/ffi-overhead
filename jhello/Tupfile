@@ -1,0 +1,17 @@
+include_rules
+
+# =====================================
+
+CFLAGS += -I/usr/lib/jvm/java-7-oracle/include
+
+N1 = newplus
+DIR1 = $(PROJECT_DIR)/$(N1)
+
+: foreach *.c |> !cc |>
+
+# ===================================== shared lib containing all the deps
+
+: *.o |> !ar |>
+: *.a $(PROJECT_DIR)/$(N1)/lib$(N1).a |> !shared |>
+
+#: *.a |> !shared |>

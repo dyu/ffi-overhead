@@ -1,0 +1,20 @@
+PROJECT_DIR = $(TUP_CWD)
+
+CFLAGS += -Wall
+# intended
+CFLAGS += -fno-inline-small-functions
+CFLAGS += -O
+CFLAGS += -fPIC
+
+NAME = %d
+
+# =====================================
+
+!cc = |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+
+!ar = |> ar crs %o %f |> lib$(NAME).a
+
+!exe = |> gcc %f -o %o |> $(NAME)
+
+!shared = |> gcc -shared -o %o -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
+
