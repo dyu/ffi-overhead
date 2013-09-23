@@ -48,8 +48,7 @@ Measurement:
 
  ```c
 int x = 0;
-while (x < 2000000000)
-    x = plusone(x);
+while (x < 2000000000) x = plusone(x);
  ```
 
 Results:
