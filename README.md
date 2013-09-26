@@ -51,7 +51,7 @@ int x = 0;
 while (x < 2000000000) x = plusone(x);
  ```
 
-Results:
+##Results
 ```
 The results are elapsed time in milliseconds
 ============================================
