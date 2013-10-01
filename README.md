@@ -47,12 +47,12 @@ My environment:
 
 Measurement:
 - call the c function "plusone" 2 billion times and print out the elapsed time in millis.
-- 2 samples/runs
-
  ```c
 int x = 0;
 while (x < 2000000000) x = plusone(x);
  ```
+
+- 2 samples/runs
 
 ##Results
 ```
