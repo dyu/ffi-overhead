@@ -12,6 +12,7 @@ Requirements on the exec path:
 - nimrod
 - javac, java
 - go
+- rust
 
 To initialize, exec:
 - tup init
@@ -42,9 +43,11 @@ My environment:
 - nimrod 0.9.3
 - java 1.7.0_25
 - go 1.1.2
+- rust 0.8
 
 Measurement:
 - call the c function "plusone" 2 billion times and print out the elapsed time in millis.
+- 2 samples/runs
 
  ```c
 int x = 0;
@@ -56,16 +59,24 @@ while (x < 2000000000) x = plusone(x);
 The results are elapsed time in milliseconds
 ============================================
 c:
-5363
+5398
+5372
 
 nimrod:
-5368
+5375
+5389
+
+rust:
+5387
+5385
 
 java:
-19115
+19117
+19135
 
 go:
-94461
+95024
+95169
 ```
 
 For enhancements, pull requests are welcome.

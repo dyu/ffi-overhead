@@ -19,6 +19,7 @@
 c_hello
 nim_hello
 hello
+rust_hello
 
 # nimrod generated code
 nimcache/*.c
