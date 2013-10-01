@@ -12,7 +12,7 @@ Requirements on the exec path:
 - nimrod
 - javac, java
 - go
-- rust
+- rustc
 
 To initialize, exec:
 - tup init
@@ -34,6 +34,7 @@ The main files:
 - hello.nim
 - jhello/Hello.java
 - hello.go
+- hello.rs
 
 My environment:
 - Intel i7-3630QM laptop (4cores, HT) with 16g ram
