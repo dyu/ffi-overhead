@@ -7,6 +7,10 @@ echo "c:"
 ./c_hello
 ./c_hello
 
+echo "\nluajit:"
+luajit hello.lua
+luajit hello.lua
+
 echo "\nnimrod:"
 ./nimcache/nim_hello
 ./nimcache/nim_hello

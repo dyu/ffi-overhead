@@ -1,9 +1,7 @@
 PROJECT_DIR = $(TUP_CWD)
 
 CFLAGS += -Wall
-# intended
-CFLAGS += -fno-inline-small-functions
-CFLAGS += -O
+CFLAGS += -O2
 CFLAGS += -fPIC
 
 NAME = %d

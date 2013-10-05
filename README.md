@@ -13,6 +13,7 @@ Requirements on the exec path:
 - javac, java
 - go
 - rustc
+- luajit
 
 To initialize, exec:
 - tup init
@@ -25,6 +26,10 @@ Workaround for go (I've to figure out how to pass rpath to go)
 To compile, exec:
 - ./compile-all.sh
 
+Compile opts:
+- -O2 (gcc - applies to c/nimrod/jni)
+- -opt-level=2 (rust)
+
 To run, exec:
 - ./run-all.sh
 
@@ -35,6 +40,7 @@ The main files:
 - jhello/Hello.java
 - hello.go
 - hello.rs
+- hello.lua
 
 My environment:
 - Intel i7-3630QM laptop (4cores, HT) with 16g ram
@@ -45,6 +51,7 @@ My environment:
 - java 1.7.0_25
 - go 1.1.2
 - rust 0.8
+- luajit 2.0.2
 
 Measurement:
 - call the c function "plusone" 2 billion times and print out the elapsed time in millis.
@@ -60,24 +67,28 @@ while (x < 2000000000) x = plusone(x);
 The results are elapsed time in milliseconds
 ============================================
 c:
-5398
-5372
+4807
+4801
+
+luajit:
+3602
+3590
 
 nimrod:
-5375
-5389
+5387
+5395
 
 rust:
-5387
-5385
+5396
+5392
 
 java:
-19117
-19135
+17983
+17973
 
 go:
-95024
-95169
+94855
+95814
 ```
 
 For enhancements, pull requests are welcome.
