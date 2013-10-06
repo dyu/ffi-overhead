@@ -27,8 +27,8 @@ To compile, exec:
 - ./compile-all.sh
 
 Compile opts:
-- -O2 (gcc - applies to c/nimrod/jni)
-- -opt-level=2 (rust)
+- -O2 (gcc - applies to c/jni)
+- --opt-level=2 (rust)
 
 To run, exec:
 - ./run-all.sh
@@ -67,28 +67,29 @@ while (x < 2000000000) x = plusone(x);
 The results are elapsed time in milliseconds
 ============================================
 c:
-4807
-4801
+4772
+4769
 
 luajit:
-3602
-3590
+3581
+3587
 
 nimrod:
-5387
-5395
+4166
+4182
 
 rust:
-5396
-5392
+5375
+5387
 
 java:
-17983
-17973
+17909
+17927
 
 go:
-94855
-95814
+94420
+94806
+
 ```
 
 For enhancements, pull requests are welcome.
