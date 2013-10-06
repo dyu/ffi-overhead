@@ -12,8 +12,8 @@ luajit hello.lua
 luajit hello.lua
 
 echo "\nnimrod:"
-./nimcache/nim_hello
-./nimcache/nim_hello
+./nim_hello
+./nim_hello
 
 echo "\nrust:"
 ./rust_hello
