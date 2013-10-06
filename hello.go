@@ -1,6 +1,6 @@
 package main
 
-// #cgo CFLAGS: -Wall -O -fPIC 
+// #cgo CFLAGS: -Wall -O2 -fPIC 
 // #cgo linux CFLAGS: -DLINUX=1
 // #cgo LDFLAGS: -lnewplus
 // #include "newplus/plus.h"
