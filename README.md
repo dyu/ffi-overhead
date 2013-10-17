@@ -67,7 +67,6 @@ while (x < 2000000000) x = plusone(x);
 The results are elapsed time in milliseconds
 ============================================
 c:
-c:
 4839
 4822
 
