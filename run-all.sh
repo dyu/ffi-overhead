@@ -39,3 +39,6 @@ echo "\ngo:"
 ./hello
 ./hello
 
+echo "\nelixir:"
+./elixir.sh
+./elixir.sh
