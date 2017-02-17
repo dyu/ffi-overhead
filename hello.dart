@@ -7,7 +7,7 @@ void main() {
   var start = current_timestamp();
   
   int x = 0;
-  while (x < 200000000) {
+  while (x < 2000000000) {
     x = plusone_noscope(x);
   }
   
