@@ -1,7 +1,7 @@
 include_rules
 
 DEPS = newplus/libnewplus.so
-LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,$ORIGIN/newplus 
+LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus 
 
 # =====================================
 
