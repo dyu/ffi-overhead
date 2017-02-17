@@ -56,7 +56,29 @@ while (x < 2000000000) x = plusone(x);
 ```
 The results are elapsed time in milliseconds
 ============================================
-PENDING
+c:
+4778
+4750
+
+nim:
+4746
+4774
+
+rust:
+5331
+5339
+
+java7:
+17922
+17913
+
+java8:
+17992
+17932
+
+go:
+130105
+132824
 
 ```
 
