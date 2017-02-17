@@ -7,7 +7,7 @@ echo "\nluajit:"
 luajit hello.lua
 luajit hello.lua
 
-echo "c:"
+echo "\nc:"
 ./c_hello
 ./c_hello
 
