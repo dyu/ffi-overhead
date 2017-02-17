@@ -9,7 +9,7 @@ LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,$ORIGIN/newplus
 
 # ===================================== exe linked to shared lib
 
-: *.o | $(DEPS) |> gcc -o %o %f $(LINK_FLAGS) |> c_hello
+: *.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> c_hello
 
 : nimcache/stdlib_system.o nimcache/hello.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> nim_hello
 
