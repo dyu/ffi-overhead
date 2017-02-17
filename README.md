@@ -17,7 +17,7 @@ My environment:
 ```
 - Intel i7-3630QM laptop (4cores, HT) with 16g ram
 - Ubuntu 14.04 x64
-- gcc 5.4.1
+- gcc/g++ 5.4.1
 - nim 0.14.3
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
@@ -60,6 +60,10 @@ The results are elapsed time in milliseconds
 c:
 4778
 4750
+
+cpp:
+4753
+4758
 
 nim:
 4746

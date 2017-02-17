@@ -9,6 +9,8 @@ NAME = %d
 
 !cc = |> gcc $(CFLAGS) -c %f -o %o |> %B.o
 
+!cxx = |> g++ $(CXXFLAGS) -c %f -o %o |> %B.o
+
 !ar = |> ar crs %o %f |> lib$(NAME).a
 
 !exe = |> gcc %f -o %o |> $(NAME)

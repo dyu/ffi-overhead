@@ -17,6 +17,7 @@
 *.app
 
 c_hello
+cpp_hello
 nim_hello
 hello
 rust_hello

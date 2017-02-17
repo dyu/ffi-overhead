@@ -5,11 +5,15 @@ LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus
 
 # =====================================
 
-: foreach *.c |> !cc |>
+: foreach *.c |> !cc |> c/%B.o
+
+: foreach *.cpp |> !cxx |> cpp/%B.o
 
 # ===================================== exe linked to shared lib
 
-: *.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> c_hello
+: c/*.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> c_hello
+
+: cpp/*.o | $(DEPS) |> g++ -O2 -o %o %f $(LINK_FLAGS) |> cpp_hello
 
 : nimcache/stdlib_system.o nimcache/hello.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> nim_hello
 

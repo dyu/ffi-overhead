@@ -7,6 +7,10 @@ echo "c:"
 ./c_hello
 ./c_hello
 
+echo "\ncpp:"
+./cpp_hello
+./cpp_hello
+
 echo "\nnim:"
 ./nim_hello
 ./nim_hello
