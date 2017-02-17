@@ -1,9 +1,18 @@
 include_rules
+
+DEPS = newplus/libnewplus.so
+LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,$ORIGIN/newplus 
+
 # =====================================
 
 : foreach *.c |> !cc |>
 
 # ===================================== exe linked to shared lib
 
-: *.o | newplus/libnewplus.so |> gcc %f -o %o -Lnewplus -lnewplus -Wl,-rpath,'$ORIGIN/newplus' |> c_hello
+: *.o | $(DEPS) |> gcc -o %o %f $(LINK_FLAGS) |> c_hello
 
+: nimcache/stdlib_system.o nimcache/hello.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> nim_hello
+
+: hello.go | $(DEPS) |> go build %f |> %B
+
+: hello.rs | $(DEPS) |> rustc -C opt-level=2 -C link-args="$(LINK_FLAGS)" -o %o %f |> rust_hello
