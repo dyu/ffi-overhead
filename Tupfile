@@ -21,7 +21,7 @@ LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus
 
 : hello.rs | $(DEPS) |> rustc -C opt-level=2 -C link-args="$(LINK_FLAGS)" -o %o %f |> rust_hello
 
-: dart/*.cpp |> g++ $(CXXFLAGS) -shared -DDART_SHARED_LIB -I/usr/lib/dart -I. -c %f -o %o |> dart/%B.o
+: foreach dart/*.cpp |> g++ $(CXXFLAGS) -shared -DDART_SHARED_LIB -I/usr/lib/dart -I. -c %f -o %o |> dart/%B.o
 
 : dart/*.o newplus/_.a |> g++ -shared -o %o -Wl,--whole-archive %f -Wl,--no-whole-archive |> dart/libnewplus_extension.so
 
