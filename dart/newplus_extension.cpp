@@ -50,6 +50,15 @@ void PlusOne(Dart_NativeArguments arguments) {
   Dart_ExitScope();
 }
 
+void PlusOneNoScope(Dart_NativeArguments arguments) {
+  int64_t x;
+  Dart_GetNativeIntegerArgument(arguments, 0, &x);
+  
+  x = static_cast<int64_t>(plusone(static_cast<int>(x)));
+  
+  Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x)));
+}
+
 void PlusOneDirect(Dart_NativeArguments arguments) {
   int64_t x;
   Dart_EnterScope();
@@ -57,6 +66,13 @@ void PlusOneDirect(Dart_NativeArguments arguments) {
   
   Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x + 1)));
   Dart_ExitScope();
+}
+
+void PlusOneDirectNoScope(Dart_NativeArguments arguments) {
+  int64_t x;
+  Dart_GetNativeIntegerArgument(arguments, 0, &x);
+  
+  Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x + 1)));
 }
 
 struct FunctionLookup {
@@ -73,8 +89,8 @@ FunctionLookup function_list[] = {
 
 FunctionLookup no_scope_function_list[] = {
   {"CurrentTimestampNoScope", CurrentTimestamp},
-  {"PlusOneNoScope", PlusOne},
-  {"PlusOneDirecteNoScope", PlusOneDirect},
+  {"PlusOneNoScope", PlusOneNoScope},
+  {"PlusOneDirectNoScope", PlusOneDirectNoScope},
   {NULL, NULL}
 };
 
