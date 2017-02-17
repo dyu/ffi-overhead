@@ -22,7 +22,7 @@ My environment:
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
 - rust 1.0.11
-- dart 1.0.21
+- dart 1.21.1
 ```
 
 ### Initialize
