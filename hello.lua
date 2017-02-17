@@ -9,7 +9,7 @@ int printf(const char *fmt, ...);
 ]]
 
 -- load
-local newplus = ffi.load("newplus")
+local newplus = ffi.load("./newplus/libnewplus.so")
 newplus.current_timestamp()
 newplus.plusone(0)
 

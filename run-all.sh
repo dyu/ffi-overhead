@@ -3,6 +3,10 @@
 echo "The results are elapsed time in milliseconds"
 echo "============================================"
 
+echo "\nluajit:"
+luajit hello.lua
+luajit hello.lua
+
 echo "c:"
 ./c_hello
 ./c_hello
@@ -30,3 +34,4 @@ echo "\njava8:"
 echo "\ngo:"
 ./hello
 ./hello
+

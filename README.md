@@ -22,6 +22,8 @@ My environment:
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
 - rust 1.0.11
+# dynamic languages 
+- luajit 2.0.4
 - dart 1.21.1
 ```
 
@@ -57,6 +59,10 @@ while (x < 2000000000) x = plusone(x);
 ```
 The results are elapsed time in milliseconds
 ============================================
+luajit:
+3617
+3618
+
 c:
 4778
 4750
