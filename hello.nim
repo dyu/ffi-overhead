@@ -1,7 +1,7 @@
 
-proc plus*(x: int32, y: int32): int32 {.importc, cdecl, dynlib:"libnewplus.so".}
-proc plusone*(x: int32): int32 {.importc, cdecl, dynlib:"libnewplus.so".}
-proc current_timestamp*(): int64 {.importc, cdecl, dynlib:"libnewplus.so".}
+proc plus*(x: int32, y: int32): int32 {.importc, cdecl.}
+proc plusone*(x: int32): int32 {.importc, cdecl.}
+proc current_timestamp*(): int64 {.importc, cdecl.}
   
 
 when isMainModule:

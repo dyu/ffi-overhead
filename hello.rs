@@ -1,14 +1,14 @@
-use std::libc::*;
+#![feature(libc)]
 
-#[link_args = "-lnewplus"]
+extern crate libc;
+
 extern
 {
-    fn plus(x: c_int, y: c_int) -> c_int;
-    fn plusone(x: c_int) -> c_int;
-    fn current_timestamp() -> c_long;
+    //fn plus(x: libc::c_int, y: libc::c_int) -> libc::c_int;
+    fn plusone(x: libc::c_int) -> libc::c_int;
+    fn current_timestamp() -> libc::c_long;
 }
 
-#[fixed_stack_segment]
 fn main()
 {
     unsafe

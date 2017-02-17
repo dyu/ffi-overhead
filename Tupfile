@@ -1,12 +1,9 @@
 include_rules
 # =====================================
 
-N1 = newplus
-DIR1 = $(PROJECT_DIR)/$(N1)
-
 : foreach *.c |> !cc |>
 
 # ===================================== exe linked to shared lib
 
-: *.o | $(DIR1)/lib$(N1).so |> gcc -Wl,-rpath,'$ORIGIN/$(DIR1)' -L$(DIR1) %f -o %o -l$(N1) |> c_hello
+: *.o | newplus/libnewplus.so |> gcc %f -o %o -Lnewplus -lnewplus -Wl,-rpath,'$ORIGIN/newplus' |> c_hello
 

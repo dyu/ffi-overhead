@@ -19,9 +19,13 @@ echo "\nrust:"
 ./rust_hello
 ./rust_hello
 
-echo "\njava:"
-java -d64 -cp . jhello.Hello
-java -d64 -cp . jhello.Hello
+echo "\njava7:"
+/usr/lib/jvm/java-7-oracle/bin/java -d64 -cp . jhello.Hello
+/usr/lib/jvm/java-7-oracle/bin/java -d64 -cp . jhello.Hello
+
+echo "\njava8:"
+/usr/lib/jvm/java-8-oracle/bin/java -d64 -cp . jhello.Hello
+/usr/lib/jvm/java-8-oracle/bin/java -d64 -cp . jhello.Hello
 
 echo "\ngo:"
 ./hello

@@ -2,12 +2,10 @@ package main
 
 // #cgo CFLAGS: -Wall -O2 -fPIC 
 // #cgo linux CFLAGS: -DLINUX=1
-// #cgo LDFLAGS: -lnewplus
+// #cgo LDFLAGS: -Lnewplus -lnewplus -Wl,-rpath='$ORIGIN'/newplus
 // #include "newplus/plus.h"
 import "C"
 import "fmt"
-
-// should be LDFLAGS: -Wl,-rpath,'$ORIGIN/$(DIR1)' -L$(DIR1) %f -o %o -l$(N1)
 
 func main() {
     // load

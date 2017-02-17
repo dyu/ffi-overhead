@@ -2,7 +2,7 @@ include_rules
 
 # =====================================
 
-CFLAGS += -I/usr/lib/jvm/java-7-oracle/include
+CFLAGS += -I/usr/lib/jvm/java-7-oracle/include -I/usr/lib/jvm/java-7-oracle/include/linux
 
 N1 = newplus
 DIR1 = $(PROJECT_DIR)/$(N1)
@@ -12,6 +12,6 @@ DIR1 = $(PROJECT_DIR)/$(N1)
 # ===================================== shared lib containing all the deps
 
 : *.o |> !ar |>
-: *.a $(PROJECT_DIR)/$(N1)/lib$(N1).a |> !shared |>
+: *.a $(PROJECT_DIR)/$(N1)/_.a |> !shared |>
 
 #: *.a |> !shared |>
