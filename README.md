@@ -3,17 +3,26 @@ ffi-overhead
 
 comparing the c ffi overhead on various programming languages
 
-
 Build requirements:
 - gcc
 - tup
 
 Requirements on the exec path:
-- nimrod
+- nim
 - javac, java
 - go
 - rustc
-- luajit
+
+My environment:
+```
+- Intel i7-3630QM laptop (4cores, HT) with 16g ram
+- Ubuntu 14.04 x64
+- gcc 5.4.1
+- nim 0.14.3
+- java 1.7.0_72 and 1.8.0_91
+- go 1.8,0
+- rust 1.0.11
+```
 
 ### Initialize
 ```sh
@@ -32,18 +41,6 @@ Compile opts:
 ### Run
 ```sh
 ./run-all.sh
-```
-
-My environment:
-```
-- Intel i7-3630QM laptop (4cores, HT) with 16g ram
-- Ubuntu 14.04 x64
-- gcc 5.4.1
-- nim 0.14.3
-- java 1.7.0_72 and 1.8.0_91
-- go 1.8,0
-- rust 1.0.11
-- luajit 2.0.4
 ```
 
 Measurement:

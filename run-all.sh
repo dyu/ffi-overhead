@@ -7,11 +7,7 @@ echo "c:"
 ./c_hello
 ./c_hello
 
-echo "\nluajit:"
-luajit hello.lua
-luajit hello.lua
-
-echo "\nnimrod:"
+echo "\nnim:"
 ./nim_hello
 ./nim_hello
 
