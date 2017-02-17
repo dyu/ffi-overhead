@@ -22,6 +22,7 @@ My environment:
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
 - rust 1.0.11
+- dart 1.0.21
 ```
 
 ### Initialize
@@ -80,6 +81,8 @@ go:
 130105
 132824
 
+dart:
+194080
 ```
 
 For enhancements, pull requests are welcome.

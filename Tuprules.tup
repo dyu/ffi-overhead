@@ -1,8 +1,7 @@
 PROJECT_DIR = $(TUP_CWD)
 
-CFLAGS += -Wall
-CFLAGS += -O2
-CFLAGS += -fPIC
+CFLAGS += -Wall -O2 -fPIC
+CXXFLAGS += -Wall -O2 -fPIC
 
 NAME = %d
 
