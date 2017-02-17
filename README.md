@@ -15,18 +15,24 @@ Requirements on the exec path:
 - rustc
 - luajit
 
-To initialize, exec:
-- tup init
+### Initialize
+```sh
+tup init
+```
 
-To compile, exec:
-- ./compile-all.sh
+### Compile
+```sh
+./compile-all.sh
+```
 
 Compile opts:
 - -O2 (gcc - applies to c/jni/nim)
 - -C opt-level=2 (rust)
 
-To run, exec:
-- ./run-all.sh
+### Run
+```sh
+./run-all.sh
+```
 
 My environment:
 ```
