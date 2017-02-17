@@ -23,6 +23,10 @@ echo "\nrust:"
 ./rust_hello
 ./rust_hello
 
+echo "\nd:"
+./d_hello
+./d_hello
+
 echo "\njava7:"
 /usr/lib/jvm/java-7-oracle/bin/java -d64 -cp . jhello.Hello
 /usr/lib/jvm/java-7-oracle/bin/java -d64 -cp . jhello.Hello

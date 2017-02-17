@@ -25,3 +25,6 @@ LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus
 
 : dart/*.o newplus/_.a |> g++ -shared -o %o -Wl,--whole-archive %f -Wl,--no-whole-archive |> dart/libnewplus_extension.so
 
+: hello.d |> dmd -c hello.d -odd -O -release |> d/%B.o
+
+: d/hello.o | $(DEPS) |> dmd %f -L-Lnewplus -L-lnewplus -L-rpath=\$ORIGIN/newplus -O -release -of%o |> d_hello

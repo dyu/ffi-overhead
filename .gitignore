@@ -21,6 +21,7 @@ cpp_hello
 nim_hello
 hello
 rust_hello
+d_hello
 
 # nimrod generated code
 nimcache/*.c
