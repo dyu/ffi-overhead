@@ -20,7 +20,7 @@ My environment:
 - gcc 5.4.1
 - nim 0.14.3
 - java 1.7.0_72 and 1.8.0_91
-- go 1.8,0
+- go 1.8.0
 - rust 1.0.11
 ```
 
