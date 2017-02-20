@@ -25,8 +25,8 @@ My environment:
 - d 2.0.71.1 (dmd)
 # dynamic languages 
 - luajit 2.0.4
-- dart 1.21.1
-- node 6.9.0
+- dart 1.21.1 (at /usr/lib/dart)
+- node 6.9.0 (at /opt/node)
 ```
 
 ### Initialize
