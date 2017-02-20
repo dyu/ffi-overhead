@@ -35,6 +35,10 @@ echo "\njava8:"
 /usr/lib/jvm/java-8-oracle/bin/java -d64 -cp . jhello.Hello
 /usr/lib/jvm/java-8-oracle/bin/java -d64 -cp . jhello.Hello
 
+echo "\nnode:"
+node hello.js
+node hello.js
+
 echo "\ngo:"
 ./hello
 ./hello

@@ -26,6 +26,7 @@ My environment:
 # dynamic languages 
 - luajit 2.0.4
 - dart 1.21.1
+- node 6.9.0
 ```
 
 ### Initialize
@@ -91,6 +92,10 @@ java7:
 java8:
 17992
 17932
+
+node:
+74276
+70353
 
 go:
 130105

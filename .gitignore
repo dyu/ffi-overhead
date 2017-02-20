@@ -16,6 +16,8 @@
 *.out
 *.app
 
+*.node
+
 c_hello
 cpp_hello
 nim_hello

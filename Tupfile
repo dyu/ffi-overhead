@@ -1,7 +1,13 @@
 include_rules
 
 DEPS = newplus/libnewplus.so
-LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus 
+LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus
+
+NODE_VERSION = 6.9.0
+
+NODE_GYP_FLAGS = -DNODE_GYP_MODULE_NAME=newplus -DUSING_UV_SHARED=1 -DUSING_V8_SHARED=1 -DV8_DEPRECATION_WARNINGS=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -I$HOME/.node-gyp/$(NODE_VERSION)/include/node -I$HOME/.node-gyp/$(NODE_VERSION)/src -I$HOME/.node-gyp/$(NODE_VERSION)/deps/uv/include -I$HOME/.node-gyp/$(NODE_VERSION)/deps/v8/include
+
+NODE_CXX_FLAGS = -std=gnu++0x -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions
 
 # =====================================
 
@@ -11,20 +17,32 @@ LINK_FLAGS = -Lnewplus -lnewplus -Wl,-rpath,\$ORIGIN/newplus
 
 # ===================================== exe linked to shared lib
 
+# c
 : c/*.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> c_hello
 
+# cpp
 : cpp/*.o | $(DEPS) |> g++ -O2 -o %o %f $(LINK_FLAGS) |> cpp_hello
 
+# nim
 : nimcache/stdlib_system.o nimcache/hello.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> nim_hello
 
+# go
 : hello.go | $(DEPS) |> go build %f |> %B
 
+# rust
 : hello.rs | $(DEPS) |> rustc -C opt-level=2 -C link-args="$(LINK_FLAGS)" -o %o %f |> rust_hello
 
+# dart
 : foreach dart/*.cpp |> g++ $(CXXFLAGS) -shared -DDART_SHARED_LIB -I/usr/lib/dart -I. -c %f -o %o |> dart/%B.o
 
 : dart/*.o newplus/_.a |> g++ -shared -o %o -Wl,--whole-archive %f -Wl,--no-whole-archive |> dart/libnewplus_extension.so
 
+# d
 : hello.d |> dmd -c hello.d -odd -O -release |> d/%B.o
 
 : d/hello.o | $(DEPS) |> dmd %f -L-Lnewplus -L-lnewplus -L-rpath=\$ORIGIN/newplus -O -release -of%o |> d_hello
+
+# node
+: node/newplus.cpp |> g++ -c %f $(NODE_CXX_FLAGS) $(NODE_GYP_FLAGS) -I. -o %o |> node/%B.o
+
+: node/newplus.o $(DEPS) |> g++ -o %o -shared -pthread -rdynamic -m64 $(LINK_FLAGS) -Wl,-soname=newplus.node -Wl,--start-group %f -Wl,--end-group |> newplus.node
