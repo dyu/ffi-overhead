@@ -3,21 +3,25 @@ ffi-overhead
 
 comparing the c ffi overhead on various programming languages
 
-Build requirements:
+Requirements:
 - gcc
 - tup
-
-Requirements on the exec path:
 - nim
-- javac, java
+- java7
+- java8
 - go
-- rustc
+- rust
+- d
+- luajit
+- node
+- dart
 
 My environment:
 ```
 - Intel i7-3630QM laptop (4cores, HT) with 16g ram
 - Ubuntu 14.04 x64
 - gcc/g++ 5.4.1
+- tup 0.7.4
 - nim 0.14.3
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
@@ -25,8 +29,8 @@ My environment:
 - d 2.0.71.1 (dmd)
 # dynamic languages 
 - luajit 2.0.4
-- dart 1.21.1 (at /usr/lib/dart)
 - node 6.9.0 (at /opt/node)
+- dart 1.22.0 (at /usr/lib/dart)
 ```
 
 ### Initialize
@@ -49,66 +53,71 @@ Compile opts:
 ```
 
 Measurement:
-- call the c function "plusone" 2 billion times and print out the elapsed time in millis.
+- call the c function "plusone" x number of times and print out the elapsed time in millis.
  ```c
 int x = 0;
-while (x < 2000000000) x = plusone(x);
+while (x < count) x = plusone(x);
  ```
 
 - 2 samples/runs
 
-##Results
+##Results (500M calls)
 ```
+./run-all.sh 500000000
 The results are elapsed time in milliseconds
 ============================================
+
 luajit:
-3617
-3618
+896
+890
 
 c:
-4778
-4750
+1188
+1185
 
 cpp:
-4753
-4758
+1185
+1187
 
 nim:
-4746
-4774
+1334
+1335
 
 rust:
-5331
-5339
+1186
+1185
 
 d:
-5405
-5411
+1334
+1334
 
 java7:
-17922
-17913
+4477
+4474
 
 java8:
-17992
-17932
+4487
+4502
 
 node:
-37839
-37514
+9418
+9432
 
-node_scoped:
-64722
-64809
+node scoped:
+15528
+15225
 
 go:
-130105
-132824
+38145
+38133
 
 dart:
-194080
-192081
-```
+31477
+31391
 
-For enhancements, pull requests are welcome.
+dart scoped:
+70066
+71389
+
+```
 
