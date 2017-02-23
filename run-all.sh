@@ -39,6 +39,10 @@ echo "\nnode:"
 node hello.js
 node hello.js
 
+echo "\nnode_scoped:"
+node hello_scoped.js
+node hello_scoped.js
+
 echo "\ngo:"
 ./hello
 ./hello
