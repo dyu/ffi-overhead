@@ -7,6 +7,18 @@
 echo "The results are elapsed time in milliseconds"
 echo "============================================"
 
+if [ "$2" = "scoped" ]; then
+    echo "\nnode scoped:"
+    node hello.js $@ && \
+    node hello.js $@
+
+    echo "\ndart scoped:"
+    dart hello.dart $@ && \
+    dart hello.dart $@
+    
+    exit 0
+fi
+
 echo "\nluajit:"
 luajit hello.lua $@ && \
 luajit hello.lua $@
@@ -48,16 +60,6 @@ echo "\ngo:"
 ./hello $@
 
 echo "\ndart:"
-dart hello.dart $@ && \
-dart hello.dart $@
-
-[ "$2" != "scoped" ] && exit 0
-
-echo "\nnode scoped:"
-node hello.js $@ && \
-node hello.js $@
-
-echo "\ndart scoped:"
 dart hello.dart $@ && \
 dart hello.dart $@
 
