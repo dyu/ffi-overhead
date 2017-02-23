@@ -47,3 +47,11 @@ echo "\ngo:"
 ./hello
 ./hello
 
+echo "\ndart:"
+dart hello.dart
+dart hello.dart
+
+echo "\ndart_scoped:"
+dart hello_scoped.dart
+dart hello_scoped.dart
+
