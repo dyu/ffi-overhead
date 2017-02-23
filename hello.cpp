@@ -3,19 +3,34 @@ extern "C" {
 #include "newplus/plus.h"
 }
 
-int main(void)
+#include <string>
+
+void run(int count)
 {
-    // start immediately
     long long start = current_timestamp();
-    long long end, elapsed;
     
     int x = 0;
-    while (x < 2000000000)
+    while (x < count)
         x = plusone(x);
     
-    end = current_timestamp(), elapsed = end - start;
+    printf("%lld\n", current_timestamp() - start);
+}
 
-    printf("%lld\n", elapsed);
+int main(int argc, char** argv)
+{
+    if (argc == 1) {
+        printf("First arg (0 - 2000000000) is required.\n");
+        return 1;
+    }
+    
+    int count = std::stoi(argv[1]);
+    if (count <= 0 || count > 2000000000) {
+        printf("Must be a positive number not exceeding 2 billion.\n");
+        return 1;
+    }
+
+    // start immediately
+    run(count);
 
     return 0;
 }

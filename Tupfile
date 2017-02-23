@@ -24,7 +24,7 @@ NODE_CXX_FLAGS = -std=gnu++0x -fPIC -pthread -Wall -Wextra -Wno-unused-parameter
 : cpp/*.o | $(DEPS) |> g++ -O2 -o %o %f $(LINK_FLAGS) |> cpp_hello
 
 # nim
-: nimcache/stdlib_system.o nimcache/hello.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) |> nim_hello
+: nimcache/*.o | $(DEPS) |> gcc -O2 -o %o %f $(LINK_FLAGS) -lc |> nim_hello
 
 # go
 : hello.go | $(DEPS) |> go build %f |> %B

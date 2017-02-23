@@ -11,30 +11,45 @@ public final class Hello
         java.io.File file = new java.io.File("."), 
             jhello = new java.io.File(file, "jhello");
         
-        if(jhello.exists())
+        if (jhello.exists())
             file = jhello;
         
         String currentDir = file.getCanonicalPath();
     
         System.load(currentDir + "/libjhello.so");
     }
-
-    public static void main(String[] args) throws Exception
+    
+    static void run(int count)
     {
-        // load
-        loadNative();
-        final long ts = current_timestamp();
-        plusone((int)ts);
-        
-        // start
         final long start = current_timestamp();
 
         int x = 0;
-        while (x < 2000000000)
+        while (x < count)
             x = plusone(x);
 
-        final long end = current_timestamp(), elapsed = end - start;
+        System.out.println(current_timestamp() - start);
+    }
 
-        System.out.println(elapsed);
+    public static void main(String[] args) throws Exception
+    {
+        if (args.length == 0)
+        {
+            System.err.println("First arg (0 - 2000000000) is required.");
+            return;
+        }
+        
+        int count = Integer.parseInt(args[0]);
+        if (count <= 0 || count > 2000000000)
+        {
+            System.err.println("Must be a positive number not exceeding 2 billion.");
+            return;
+        }
+        
+        // load
+        loadNative();
+        plusone((int)current_timestamp());
+        
+        // start
+        run(count);
     }
 }
