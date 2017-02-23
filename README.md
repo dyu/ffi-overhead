@@ -49,7 +49,7 @@ Compile opts:
 
 ### Run
 ```sh
-./run-all.sh
+./run-all.sh 1000000
 ```
 
 Measurement:
