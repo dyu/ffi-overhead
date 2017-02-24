@@ -56,8 +56,8 @@ node hello.js $@ && \
 node hello.js $@
 
 echo "\ngo:"
-./hello $@ && \
-./hello $@
+./go_hello $@ && \
+./go_hello $@
 
 echo "\ndart:"
 dart hello.dart $@ && \

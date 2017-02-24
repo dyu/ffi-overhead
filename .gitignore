@@ -18,16 +18,10 @@
 
 *.node
 
-c_hello
-cpp_hello
-nim_hello
-hello
-rust_hello
-d_hello
+/*_hello
 
-# nimrod generated code
 nimcache/*.c
 
 *.class
 
-.tup/
+.tup
