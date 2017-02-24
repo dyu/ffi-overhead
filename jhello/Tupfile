@@ -14,7 +14,7 @@ DIR1 = $(PROJECT_DIR)/$(N1)
 # ===================================== shared lib containing all the deps
 
 : *.o |> !ar |>
-: *.a $(PROJECT_DIR)/$(N1)/_.a |> !shared |>
+: *.a $(PROJECT_DIR)/$(N1)/_.a |> !cc_shared |>
 
 : Hello.java |> $(JAVA_HOME)/bin/javac -d .. %f |> %B.class
 

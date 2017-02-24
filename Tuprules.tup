@@ -1,19 +1,31 @@
 PROJECT_DIR = $(TUP_CWD)
 
-CFLAGS += -Wall -O2 -fPIC
-CXXFLAGS += -Wall -O2 -fPIC -std=c++14
+OPT_FLAG = -O2
+
+CFLAGS += -Wall -fPIC $(OPT_FLAG)
+CXXFLAGS += -Wall -fPIC -std=c++14 $(OPT_FLAG)
+
+LINK_FLAGS =
 
 NAME = %d
 
+CC = gcc
+
+CXX = g++
+
 # =====================================
 
-!cc = |> gcc $(CFLAGS) -c %f -o %o |> %B.o
+!cc = |> $(CC) -c %f -o %o $(CFLAGS) |> %B.o
 
-!cxx = |> g++ $(CXXFLAGS) -c %f -o %o |> %B.o
+!cxx = |> $(CXX) -c %f -o %o $(CXXFLAGS) |> %B.o
 
 !ar = |> ar crs %o %f |> lib$(NAME).a
 
-!exe = |> gcc %f -o %o |> $(NAME)
+!cc_exe = |> $(CC) -o %o $(OPT_FLAG) %f $(LINK_FLAGS) |> $(NAME)
 
-!shared = |> gcc -shared -o %o -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
+!cxx_exe = |> $(CXX) -o %o $(OPT_FLAG) %f $(LINK_FLAGS) |> $(NAME)
+
+!cc_shared = |> $(CC) -o %o -shared -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
+
+!cxx_shared = |> $(CXX) -o %o -shared -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
 

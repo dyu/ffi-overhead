@@ -7,4 +7,4 @@ include_rules
 # ===================================== lib
 
 : *.o |> !ar |> _.a
-: *.a |> !shared |>
+: *.a |> !cc_shared |>
