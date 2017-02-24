@@ -8,7 +8,7 @@ NODE_VERSION = 6.9.0
 
 NODE_GYP_FLAGS = -DNODE_GYP_MODULE_NAME=newplus -DUSING_UV_SHARED=1 -DUSING_V8_SHARED=1 -DV8_DEPRECATION_WARNINGS=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -I$HOME/.node-gyp/$(NODE_VERSION)/include/node -I$HOME/.node-gyp/$(NODE_VERSION)/src -I$HOME/.node-gyp/$(NODE_VERSION)/deps/uv/include -I$HOME/.node-gyp/$(NODE_VERSION)/deps/v8/include
 
-NODE_CXX_FLAGS = -std=gnu++0x -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions
+NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 
 # =====================================
 
@@ -46,5 +46,5 @@ NODE_CXX_FLAGS = -std=gnu++0x -fPIC -pthread -Wall -Wextra -Wno-unused-parameter
 # node
 : foreach node/*.cpp |> $(CXX) -c %f -o %o $(NODE_CXX_FLAGS) $(NODE_GYP_FLAGS) -I. |> node/%B.o
 
-: node/*.o newplus/_.a |> $(CXX) -o %o -shared -Wl,-soname=%o %f |> newplus.node
+: node/*.o newplus/_.a |> $(CXX) -o %o -shared $(OPT_FLAG) -Wl,-soname=%o %f |> newplus.node
 

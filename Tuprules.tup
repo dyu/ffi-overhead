@@ -2,8 +2,8 @@ PROJECT_DIR = $(TUP_CWD)
 
 OPT_FLAG = -O2
 
-CFLAGS += -Wall -fPIC $(OPT_FLAG)
-CXXFLAGS += -Wall -fPIC -std=c++14 $(OPT_FLAG)
+CFLAGS += -fPIC $(OPT_FLAG) -Wall -Wextra -Wno-unused-parameter
+CXXFLAGS += -std=c++14 $(CFLAGS) -fno-rtti
 
 LINK_FLAGS =
 
@@ -25,7 +25,7 @@ CXX = g++
 
 !cxx_exe = |> $(CXX) -o %o $(OPT_FLAG) %f $(LINK_FLAGS) |> $(NAME)
 
-!cc_shared = |> $(CC) -o %o -shared -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
+!cc_shared = |> $(CC) -o %o -shared $(OPT_FLAG) -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
 
-!cxx_shared = |> $(CXX) -o %o -shared -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
+!cxx_shared = |> $(CXX) -o %o -shared $(OPT_FLAG) -Wl,--whole-archive %f -Wl,--no-whole-archive |> lib$(NAME).so
 
