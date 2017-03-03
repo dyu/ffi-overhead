@@ -25,7 +25,7 @@ My environment:
 - nim 0.14.3
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
-- rust 1.15.1
+- rust 1.17.0-nightly (c0b7112ba 2017-03-02)
 - d 2.0.71.1 (dmd)
 # dynamic languages 
 - luajit 2.0.4
