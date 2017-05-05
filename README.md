@@ -61,7 +61,7 @@ while (x < count) x = plusone(x);
 
 - 2 samples/runs
 
-##Results (500M calls)
+## Results (500M calls)
 ```
 ./run-all.sh 500000000
 The results are elapsed time in milliseconds
