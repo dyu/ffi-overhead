@@ -1,5 +1,5 @@
-import std.stdio;
-import std.conv;
+import core.stdc.stdio;
+import core.stdc.stdlib;
 
 extern (C) int plusone(int x);
 extern (C) long current_timestamp();
@@ -11,18 +11,18 @@ void run(int count) {
         x = plusone(x);
     }
     
-    writefln("%d", current_timestamp() - start);
+    printf("%d", current_timestamp() - start);
 }
 
-int main(string[] args) {
-    if (args.length == 1) {
-        writefln("First arg (0 - 2000000000) is required.");
+extern (C) int main(int argc, char** argv) {
+    if (argc == 1) {
+        printf("First arg (0 - 2000000000) is required.\n");
         return 1;
     }
     
-    int count = to!int(args[1]);
+    int count = atoi(argv[1]);
     if (count <= 0 || count > 2000000000) {
-        writefln("Must be a positive number not exceeding 2 billion.");
+        printf("Must be a positive number not exceeding 2 billion.\n");
         return 1;
     }
     

@@ -39,9 +39,9 @@ NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 : dart/*.o newplus/_.a |> $(CXX) -o %o -shared $(OPT_FLAG) %f |> dart/libnewplus_extension.so
 
 # d
-: hello.d |> dmd -c %f -odd -O -release |> d/%B.o
+: hello.d |> dmd -betterC -c %f -odd -O -release |> d/%B.o
 
-: d/*.o | $(DEPS) |> dmd %f -of%o -L-Lnewplus -L-lnewplus -L-rpath=\$ORIGIN/newplus -O -release |> d_hello
+: d/*.o | $(DEPS) |> dmd -betterC %f -of%o -L-Lnewplus -L-lnewplus -L-rpath=\$ORIGIN/newplus -O -release |> d_hello
 
 # node
 : foreach node/*.cpp |> $(CXX) -c %f -o %o $(NODE_CXX_FLAGS) $(NODE_GYP_FLAGS) -I. |> node/%B.o
