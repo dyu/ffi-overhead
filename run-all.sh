@@ -64,5 +64,5 @@ dart hello.dart $@ && \
 dart hello.dart $@
 
 echo "\nwren:"
-./wren_hello $@ && \
-./wren_hello $@
+./wren_hello hello.wren $@ && \
+./wren_hello hello.wren $@

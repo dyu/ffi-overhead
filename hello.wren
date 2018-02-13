@@ -5,10 +5,12 @@ class FFI {
     foreign static stop()
 }
 var x = 0
-var y = FFI.count()
+var count = FFI.count()
+// try call
+FFI.plusone(x)
 
 FFI.start()
-while (x < y) {
+while (x < count) {
     x = FFI.plusone(x)
 }
 FFI.stop()

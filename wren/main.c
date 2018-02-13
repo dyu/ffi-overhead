@@ -143,12 +143,13 @@ static char* readFile(const char* path)
   return buffer;
 }
 
+static const int DEFAULT_COUNT = 1000000;
+static const char DEFAULT_SCRIPT[] = "hello.wren";
+
 int main(int argc, char *argv[])
 {
-    int c = 2000;
-    
-    if (argc != 1)
-        c = atoi(argv[1]);
+    const char* s = argc > 1 ? argv[1] : DEFAULT_SCRIPT;
+    const int c = argc > 2 ? atoi(argv[2]) : DEFAULT_COUNT;
     
     count += c;
     
@@ -165,10 +166,10 @@ int main(int argc, char *argv[])
     config.initialHeapSize = 1024 * 1024 * 100;
     WrenVM* vm = wrenNewVM(&config);
     
-    char* script = readFile("hello.wren");
+    char* script = readFile(s);
     if (script == NULL)
     {
-        fprintf(stderr, "Could not locate hello.wren\n");
+        fprintf(stderr, "Could not locate %s\n", s);
         return 1;
     }
     
