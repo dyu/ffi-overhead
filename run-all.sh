@@ -63,3 +63,6 @@ echo "\ndart:"
 dart hello.dart $@ && \
 dart hello.dart $@
 
+echo "\nwren:"
+./wren_hello $@ && \
+./wren_hello $@

@@ -48,3 +48,8 @@ NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 
 : node/*.o newplus/_.a |> $(CXX) -o %o -shared $(OPT_FLAG) -Wl,-soname=%o %f |> newplus.node
 
+# wren
+: foreach wren/*.c |> $(CC) -c %f -o %o $(CFLAGS) -I. -Iwren/include |> wren/%B.o
+
+LINK_FLAGS += -lm
+: wren/*.o wren/*.a | $(DEPS) |> !cc_exe |> wren_hello

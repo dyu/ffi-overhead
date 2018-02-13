@@ -15,6 +15,7 @@ Requirements:
 - luajit
 - node
 - dart
+- wren
 
 My environment:
 ```
@@ -31,6 +32,7 @@ My environment:
 - luajit 2.0.4
 - node 6.9.0 (at /opt/node)
 - dart 1.22.0 (at /usr/lib/dart)
+- wren 0.1.0
 ```
 
 ### Initialize
@@ -119,5 +121,8 @@ dart scoped:
 61906
 69043
 
+wren:
+14519
+14514
 ```
 
