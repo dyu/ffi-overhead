@@ -153,6 +153,13 @@ int main(int argc, char *argv[])
     
     count += c;
     
+    char* script = readFile(s);
+    if (script == NULL)
+    {
+        fprintf(stderr, "Could not locate %s\n", s);
+        return 1;
+    }
+    
     WrenConfiguration config;
     wrenInitConfiguration(&config);
 
@@ -165,13 +172,6 @@ int main(int argc, char *argv[])
     // Since we're running in a standalone process, be generous with memory.
     config.initialHeapSize = 1024 * 1024 * 100;
     WrenVM* vm = wrenNewVM(&config);
-    
-    char* script = readFile(s);
-    if (script == NULL)
-    {
-        fprintf(stderr, "Could not locate %s\n", s);
-        return 1;
-    }
     
     //fprintf(stdout, "Found hello.wren\n%s\n", script);
     
@@ -186,7 +186,6 @@ int main(int argc, char *argv[])
     }
         
     wrenFreeVM(vm);
-    
     free(script);
     
     return result;
