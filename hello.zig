@@ -41,6 +41,6 @@ fn run(count: i32) void {
         x = c.plusone(x);
     }
     
-    const end = c.current_timestamp() - start;
-    _ = c.printf(c"%lld\n", end);
+    const elapsed = c.current_timestamp() - start;
+    _ = c.printf(c"%lld\n", elapsed);
 }
