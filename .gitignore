@@ -20,7 +20,8 @@
 
 /*_hello
 
-nimcache/*.c
+/nimcache
+/zig-cache
 
 *.class
 

@@ -6,6 +6,7 @@ comparing the c ffi overhead on various programming languages
 Requirements:
 - gcc
 - tup
+- zig
 - nim
 - java7
 - java8
@@ -23,6 +24,7 @@ My environment:
 - Ubuntu 14.04 x64
 - gcc/g++ 5.4.1
 - tup 0.7.4
+- zig 0.2.0
 - nim 0.14.3
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
@@ -80,6 +82,10 @@ c:
 cpp:
 1182
 1183
+
+zig:
+1191
+1190
 
 nim:
 1330
