@@ -43,6 +43,14 @@ echo "\nrust:"
 ./rust_hello $@ && \
 ./rust_hello $@
 
+echo "\nocamlopt:"
+./ocaml/test.nat $@ && \
+./ocaml/test.nat $@
+
+echo "\nocamlc:"
+./ocaml/test.bc $@ && \
+./ocaml/test.bc $@
+
 echo "\nd:"
 ./d_hello $@ && \
 ./d_hello $@
