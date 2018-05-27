@@ -31,6 +31,11 @@ echo "\ncpp:"
 ./cpp_hello $@ && \
 ./cpp_hello $@
 
+# TODO: CoreCLR and natively running on Windows
+echo "\ncsharp (mono):"
+mono ./csharp_hello.exe $@ && \
+mono ./csharp_hello.exe $@
+
 echo "\nzig:"
 ./zig_hello $@ && \
 ./zig_hello $@
