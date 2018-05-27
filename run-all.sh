@@ -15,7 +15,7 @@ if [ "$2" = "scoped" ]; then
     echo "\ndart scoped:"
     dart hello.dart $@ && \
     dart hello.dart $@
-    
+
     exit 0
 fi
 
@@ -70,3 +70,7 @@ dart hello.dart $@
 echo "\nwren:"
 ./wren_hello hello.wren $@ && \
 ./wren_hello hello.wren $@
+
+echo "\njulia"
+julia hello.jl $@ && \
+julia hello.jl $@

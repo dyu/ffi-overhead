@@ -4,7 +4,7 @@ function run(count::Int32)
     while x < count
         x = ccall((:plusone, "./newplus/libnewplus.so"), Int32, (Cint,), x)
     end
-    return time() - start
+    return round(Int32, (time() - start) * 1000)
 end
 
 function start()
