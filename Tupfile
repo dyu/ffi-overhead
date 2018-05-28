@@ -43,6 +43,9 @@ NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 
 : d/*.o | $(DEPS) |> dmd -betterC %f -of%o -L-Lnewplus -L-lnewplus -L-rpath=\$ORIGIN/newplus -O -release |> d_hello
 
+# haskell
+: hello.hs | $(DEPS) |> ghc -O2 -Lnewplus -lnewplus -optl-Wl,-rpath,$(RPATH_NEWPLUS) -o ghc_hello %f |> ghc_hello hello.hi hello.o
+
 # node
 : foreach node/*.cpp |> $(CXX) -c %f -o %o $(NODE_CXX_FLAGS) $(NODE_GYP_FLAGS) -I. |> node/%B.o
 
