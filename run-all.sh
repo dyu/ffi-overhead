@@ -63,6 +63,10 @@ echo "\ngo:"
 ./go_hello $@ && \
 ./go_hello $@
 
+echo "\nhaskell:"
+./ghc_hello $@ && \
+./ghc_hello $@
+
 echo "\ndart:"
 dart hello.dart $@ && \
 dart hello.dart $@

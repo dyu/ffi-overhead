@@ -24,5 +24,6 @@
 /zig-cache
 
 *.class
+*.hi
 
 .tup
