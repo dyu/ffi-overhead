@@ -5,4 +5,4 @@ nim c --noLinking -d:release --parallelBuild:1 hello.nim && \
     make -C ocaml &&
     tup upd
 
-
+make -C elixir

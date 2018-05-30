@@ -88,6 +88,10 @@ echo "\nwren:"
 ./wren_hello hello.wren $@ && \
 ./wren_hello hello.wren $@
 
+echo "\nelixir:"
+./elixir.sh
+./elixir.sh
+
 echo "\njulia"
 julia hello.jl $@ && \
 julia hello.jl $@
