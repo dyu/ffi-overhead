@@ -1,6 +1,6 @@
 
-extern int plus(int x, int y);
+int plus(int x, int y);
 
-extern int plusone(int x);
+int plusone(int x);
 
-extern long long current_timestamp(void);
+long long current_timestamp(void);

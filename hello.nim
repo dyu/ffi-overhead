@@ -1,15 +1,15 @@
+import os, strutils
 
-proc plus*(x: int32, y: int32): int32 {.importc, cdecl.}
-proc plusone*(x: int32): int32 {.importc, cdecl.}
-proc current_timestamp*(): int64 {.importc, cdecl.}
-  
+proc plus*(x, y: cint): cint {.importc, cdecl.}
+proc plusone*(x: cint): cint {.importc, cdecl.}
+proc current_timestamp*(): clonglong {.importc, cdecl.}
 
-when isMainModule:
+proc run(count: cint) =
   # start immediately
   let start = current_timestamp()
   
-  var x:int32 = 0
-  while x < 2_000_000_000:
+  var x: cint = 0
+  while x < count:
     x = plusone(x)
   
   let
@@ -18,3 +18,17 @@ when isMainModule:
   
   echo elapsed
 
+proc start =
+  if os.paramCount() == 0:
+    echo "First arg (0 - 2000000000) is required."
+    return
+  
+  let count = parseInt(os.paramStr(1))
+  if count notin 1..2000000000:
+    echo "Must be a positive number not exceeding 2 billion."
+    return
+  
+  run(count.cint)
+
+when isMainModule:
+  start()

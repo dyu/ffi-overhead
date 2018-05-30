@@ -16,16 +16,14 @@
 *.out
 *.app
 
-c_hello
-cpp_hello
-nim_hello
-hello
-rust_hello
-d_hello
+*.node
 
-# nimrod generated code
-nimcache/*.c
+/*_hello
+
+/nimcache
+/zig-cache
 
 *.class
+*.hi
 
-.tup/
+.tup

@@ -1,15 +1,33 @@
-import std.stdio;
+import core.stdc.stdio;
+import core.stdc.stdlib;
 
 extern (C) int plusone(int x);
 extern (C) long current_timestamp();
 
-void main() {
+void run(int count) {
     auto start = current_timestamp();
     int x = 0;
-    while (x < 2000000000) {
+    while (x < count) {
         x = plusone(x);
     }
-    auto end = current_timestamp();
-    auto elapsed = end - start;
-    writefln("%d", elapsed);
+    
+    printf("%d", current_timestamp() - start);
+}
+
+extern (C) int main(int argc, char** argv) {
+    if (argc == 1) {
+        printf("First arg (0 - 2000000000) is required.\n");
+        return 1;
+    }
+    
+    int count = atoi(argv[1]);
+    if (count <= 0 || count > 2000000000) {
+        printf("Must be a positive number not exceeding 2 billion.\n");
+        return 1;
+    }
+    
+    // start immediately
+    run(count);
+    
+    return 0;
 }

@@ -34,24 +34,11 @@ Dart_Handle HandleError(Dart_Handle handle) {
 
 
 void CurrentTimestamp(Dart_NativeArguments arguments) {
-  Dart_EnterScope();
   Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(current_timestamp())));
-  Dart_ExitScope();
 }
 
 void PlusOne(Dart_NativeArguments arguments) {
   int64_t x;
-  Dart_EnterScope();
-  Dart_GetNativeIntegerArgument(arguments, 0, &x);
-  
-  x = static_cast<int64_t>(plusone(static_cast<int>(x)));
-  
-  Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x)));
-  Dart_ExitScope();
-}
-
-void PlusOneNoScope(Dart_NativeArguments arguments) {
-  int64_t x;
   Dart_GetNativeIntegerArgument(arguments, 0, &x);
   
   x = static_cast<int64_t>(plusone(static_cast<int>(x)));
@@ -59,20 +46,15 @@ void PlusOneNoScope(Dart_NativeArguments arguments) {
   Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x)));
 }
 
-void PlusOneDirect(Dart_NativeArguments arguments) {
+void PlusOneScoped(Dart_NativeArguments arguments) {
   int64_t x;
   Dart_EnterScope();
   Dart_GetNativeIntegerArgument(arguments, 0, &x);
   
-  Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x + 1)));
-  Dart_ExitScope();
-}
-
-void PlusOneDirectNoScope(Dart_NativeArguments arguments) {
-  int64_t x;
-  Dart_GetNativeIntegerArgument(arguments, 0, &x);
+  x = static_cast<int64_t>(plusone(static_cast<int>(x)));
   
-  Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x + 1)));
+  Dart_SetReturnValue(arguments, HandleError(Dart_NewInteger(x)));
+  Dart_ExitScope();
 }
 
 struct FunctionLookup {
@@ -81,16 +63,13 @@ struct FunctionLookup {
 };
 
 FunctionLookup function_list[] = {
-  {"CurrentTimestamp", CurrentTimestamp},
-  {"PlusOne", PlusOne},
-  {"PlusOneDirect", PlusOneDirect},
+  {"PlusOneScoped", PlusOneScoped},
   {NULL, NULL}
 };
 
 FunctionLookup no_scope_function_list[] = {
-  {"CurrentTimestampNoScope", CurrentTimestamp},
-  {"PlusOneNoScope", PlusOneNoScope},
-  {"PlusOneDirectNoScope", PlusOneDirectNoScope},
+  {"CurrentTimestamp", CurrentTimestamp},
+  {"PlusOne", PlusOne},
   {NULL, NULL}
 };
 
