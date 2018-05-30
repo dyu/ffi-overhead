@@ -24,6 +24,9 @@ NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 # cpp
 : cpp/*.o | $(DEPS) |> !cxx_exe |> cpp_hello
 
+# csharp (use mcs if csc doesn't work)
+: hello.cs | $(DEPS) |> csc /out:%o %f |> csharp_hello.exe
+
 # nim
 : nimcache/*.o | $(DEPS) |> !cc_exe |> nim_hello
 
