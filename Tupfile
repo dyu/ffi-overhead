@@ -44,7 +44,7 @@ NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 # d
 : hello.d |> dmd -betterC -c %f -odd -O -release |> d/%B.o
 
-: d/*.o | $(DEPS) |> dmd -betterC %f -of%o -L-Lnewplus -L-lnewplus -L-rpath=\$ORIGIN/newplus -O -release |> d_hello
+: d/*.o | $(DEPS) |> dmd -betterC %f -of%o -L-Lnewplus -L-lnewplus -L-rpath=$(RPATH_NEWPLUS) -O -release |> d_hello
 
 # haskell
 : hello.hs | $(DEPS) |> ghc -O2 -Lnewplus -lnewplus -optl-Wl,-rpath,$(RPATH_NEWPLUS) -o ghc_hello %f |> ghc_hello hello.hi hello.o
