@@ -93,8 +93,8 @@ echo "\nwren:"
 ./wren_hello hello.wren $@
 
 echo "\nelixir:"
-./elixir.sh
-./elixir.sh
+elixir -r hello.ex -e "S.start" $@ && \
+elixir -r hello.ex -e "S.start" $@
 
 echo "\njulia:"
 julia hello.jl $@ && \

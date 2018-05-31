@@ -4,8 +4,3 @@ CFLAGS += -I$(ERLANG_PATH)
 
 plus_one.so: plus_one.c
 	cc $(CFLAGS) -shared -fPIC plus_one.c ../newplus/plus.c -o plus_one.so
-
-.PHONY: run
-
-run: plus_one.so
-	elixir -r s.ex -e "S.run"
