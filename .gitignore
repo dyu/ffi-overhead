@@ -22,6 +22,11 @@
 
 /nimcache
 /zig-cache
+/ocaml/*.bc
+/ocaml/*.nat
+/ocaml/*.cmi
+/ocaml/*.cmo
+/ocaml/*.cmx
 
 *.class
 *.hi
