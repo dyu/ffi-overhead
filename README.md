@@ -15,6 +15,7 @@ Requirements:
 - d (dmd and ldc2)
 - haskell (ghc)
 - luajit
+- julia
 - node
 - dart
 - wren
@@ -36,6 +37,7 @@ My environment:
 - ghc 7.10.3 (at /opt/ghc)
 # dynamic languages 
 - luajit 2.0.4
+- julia 0.6.3
 - node 6.9.0 (at /opt/node)
 - dart 1.22.0 (at /usr/lib/dart)
 - wren 0.1.0
@@ -79,6 +81,10 @@ The results are elapsed time in milliseconds
 luajit:
 891
 905
+
+julia:
+894
+889
 
 c:
 1182
