@@ -87,11 +87,24 @@ let run_int_alloc limit =
   let finish_at = current_timestamp () in
   prerr_endline ("ocaml(int,alloc," ^ backend ^ ") = " ^ string_of_int (finish_at - start_at))
 
+(*let run_int_untagged limit = *)
+let run_default limit =
+  let start_at = current_timestamp () in
+  let x = ref 0 in
+  while !x < limit do
+    x := plusone_int_untagged !x
+  done;
+  let finish_at = current_timestamp () in
+  prerr_endline (string_of_int (finish_at - start_at))
+
 let () =
   let limit = int_of_string Sys.argv.(1) in
+  run_default limit;
+  (*
   run_int_noalloc limit;
   run_int_alloc limit;
   run_int_untagged limit;
   run_32_noalloc limit;
   run_32_alloc limit;
   run_32_boxed limit;
+  *)
