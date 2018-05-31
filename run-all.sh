@@ -48,14 +48,6 @@ echo "\nrust:"
 ./rust_hello $@ && \
 ./rust_hello $@
 
-echo "\nocamlopt:"
-./ocaml/test.nat $@ && \
-./ocaml/test.nat $@
-
-echo "\nocamlc:"
-./ocaml/test.bc $@ && \
-./ocaml/test.bc $@
-
 echo "\nd:"
 ./d_hello $@ && \
 ./d_hello $@
@@ -63,6 +55,18 @@ echo "\nd:"
 echo "\nd ldc2:"
 ./d_ldc2_hello $@ && \
 ./d_ldc2_hello $@
+
+echo "\nhaskell:"
+./ghc_hello $@ && \
+./ghc_hello $@
+
+echo "\nocamlopt:"
+./ocaml/test.nat $@ && \
+./ocaml/test.nat $@
+
+echo "\nocamlc:"
+./ocaml/test.bc $@ && \
+./ocaml/test.bc $@
 
 echo "\njava7:"
 /usr/lib/jvm/java-7-oracle/bin/java -cp . jhello.Hello $@ && \
@@ -79,10 +83,6 @@ node hello.js $@
 echo "\ngo:"
 ./go_hello $@ && \
 ./go_hello $@
-
-echo "\nhaskell:"
-./ghc_hello $@ && \
-./ghc_hello $@
 
 echo "\ndart:"
 dart hello.dart $@ && \
