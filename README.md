@@ -15,6 +15,7 @@ Requirements:
 - d (dmd and ldc2)
 - haskell (ghc)
 - ocaml
+- csharp (mono)
 - luajit
 - julia
 - node
@@ -37,6 +38,7 @@ My environment:
 - ldc2 1.9.0
 - ghc 7.10.3 (at /opt/ghc)
 - ocaml 4.06.1
+- mono 5.12.0.226
 # dynamic languages 
 - luajit 2.0.4
 - julia 0.6.3
@@ -127,6 +129,10 @@ ocamlopt:
 ocamlc:
 4299
 4302
+
+csharp mono:
+2697
+2690
 
 java7:
 4469

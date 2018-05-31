@@ -31,11 +31,6 @@ echo "\ncpp:"
 ./cpp_hello $@ && \
 ./cpp_hello $@
 
-# TODO: CoreCLR and natively running on Windows
-echo "\ncsharp (mono):"
-mono ./csharp_hello.exe $@ && \
-mono ./csharp_hello.exe $@
-
 echo "\nzig:"
 ./zig_hello $@ && \
 ./zig_hello $@
@@ -67,6 +62,11 @@ echo "\nocamlopt:"
 echo "\nocamlc:"
 ./ocaml/test.bc $@ && \
 ./ocaml/test.bc $@
+
+# TODO: CoreCLR and natively running on Windows
+echo "\ncsharp mono:"
+mono ./csharp_hello.exe $@ && \
+mono ./csharp_hello.exe $@
 
 echo "\njava7:"
 /usr/lib/jvm/java-7-oracle/bin/java -cp . jhello.Hello $@ && \
