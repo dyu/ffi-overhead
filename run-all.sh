@@ -92,6 +92,6 @@ echo "\nelixir:"
 ./elixir.sh
 ./elixir.sh
 
-echo "\njulia"
+echo "\njulia:"
 julia hello.jl $@ && \
 julia hello.jl $@
