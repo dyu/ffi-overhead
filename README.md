@@ -17,6 +17,7 @@ Requirements:
 - node
 - dart
 - wren
+- elixir
 
 My environment:
 ```
@@ -36,6 +37,7 @@ My environment:
 - node 6.9.0 (at /opt/node)
 - dart 1.22.0 (at /usr/lib/dart)
 - wren 0.1.0
+- elixir 1.6.5 (Erlang/OTP 20)
 ```
 
 ### Initialize
@@ -135,5 +137,9 @@ dart scoped:
 wren:
 14519
 14514
+
+elixir:
+23852
+23752
 ```
 
