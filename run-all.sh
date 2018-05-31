@@ -60,6 +60,10 @@ echo "\nd:"
 ./d_hello $@ && \
 ./d_hello $@
 
+echo "\nd ldc2:"
+./d_ldc2_hello $@ && \
+./d_ldc2_hello $@
+
 echo "\njava7:"
 /usr/lib/jvm/java-7-oracle/bin/java -cp . jhello.Hello $@ && \
 /usr/lib/jvm/java-7-oracle/bin/java -cp . jhello.Hello $@

@@ -12,7 +12,7 @@ Requirements:
 - java8
 - go
 - rust
-- d
+- d (dmd and ldc2)
 - luajit
 - node
 - dart
@@ -29,7 +29,8 @@ My environment:
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
 - rust 1.17.0-nightly (c0b7112ba 2017-03-02)
-- d 2.0.71.1 (dmd)
+- dmd 2.0.71.1
+- ldc2 1.9.0
 # dynamic languages 
 - luajit 2.0.4
 - node 6.9.0 (at /opt/node)
@@ -98,6 +99,10 @@ rust:
 d:
 1330
 1330
+
+d ldc2:
+1191
+1189
 
 java7:
 4469
