@@ -14,6 +14,7 @@ Requirements:
 - rust
 - d (dmd and ldc2)
 - haskell (ghc)
+- ocaml
 - luajit
 - julia
 - node
@@ -35,6 +36,7 @@ My environment:
 - dmd 2.0.71.1
 - ldc2 1.9.0
 - ghc 7.10.3 (at /opt/ghc)
+- ocaml 4.06.1
 # dynamic languages 
 - luajit 2.0.4
 - julia 0.6.3
@@ -117,6 +119,14 @@ d ldc2:
 haskell:
 1638
 1639
+
+ocamlopt:
+1634
+1634
+
+ocamlc:
+4299
+4302
 
 java7:
 4469
