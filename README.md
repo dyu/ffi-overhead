@@ -13,6 +13,7 @@ Requirements:
 - go
 - rust
 - d (dmd and ldc2)
+- haskell (ghc)
 - luajit
 - node
 - dart
@@ -32,6 +33,7 @@ My environment:
 - rust 1.17.0-nightly (c0b7112ba 2017-03-02)
 - dmd 2.0.71.1
 - ldc2 1.9.0
+- ghc 7.10.3 (at /opt/ghc)
 # dynamic languages 
 - luajit 2.0.4
 - node 6.9.0 (at /opt/node)
@@ -105,6 +107,10 @@ d:
 d ldc2:
 1191
 1189
+
+haskell:
+1638
+1639
 
 java7:
 4469
