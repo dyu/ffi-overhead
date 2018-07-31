@@ -12,9 +12,9 @@ run :: CInt -> IO ()
 run count = do
   start <- current_timestamp
   let
-    go x =
-      when (x < count) (go (plusone x))
-  go 0
+    go x | x < count = go (plusone x)
+         | otherwise = x
+  print (go 0) -- to force evaluation and also prove it actually happened
   end <- current_timestamp
   print (end - start)
 
