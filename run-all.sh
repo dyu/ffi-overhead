@@ -99,3 +99,7 @@ elixir -r hello.ex -e "S.start" $@
 echo "\njulia:"
 julia hello.jl $@ && \
 julia hello.jl $@
+
+echo "\npython3:"
+python hello.py $@ && \
+python hello.py $@
