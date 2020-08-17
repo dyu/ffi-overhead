@@ -99,3 +99,7 @@ elixir -r hello.ex -e "S.start" $@
 echo "\njulia:"
 julia hello.jl $@ && \
 julia hello.jl $@
+
+echo "\nnetcore3.1:"
+./netcore/bin/Release/netcoreapp3.1/netcore $@ && \
+./netcore/bin/Release/netcoreapp3.1/netcore $@
