@@ -28,7 +28,7 @@ JNIEXPORT jlong JNICALL Java_jhello_Hello_current_1timestamp
     return current_timestamp();
     /*struct timeval te; 
     gettimeofday(&te, NULL); // get current time
-    jlong milliseconds = te.tv_sec*1000LL + te.tv_usec/1000; // caculate milliseconds
+    jlong milliseconds = te.tv_sec*1000LL + te.tv_usec/1000; // calculate milliseconds
     
     return milliseconds;*/
 }
