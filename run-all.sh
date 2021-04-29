@@ -99,3 +99,7 @@ elixir -r hello.ex -e "S.start" $@
 echo "\njulia:"
 julia hello.jl $@ && \
 julia hello.jl $@
+
+echo "\nV:"
+v run hello.v $@ && \
+v run hello.v $@
