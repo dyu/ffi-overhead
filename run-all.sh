@@ -39,6 +39,10 @@ echo "\nnim:"
 ./nim_hello $@ && \
 ./nim_hello $@
 
+echo "\nv:"
+./v_hello $@ && \
+./v_hello $@
+
 echo "\nrust:"
 ./rust_hello $@ && \
 ./rust_hello $@
@@ -100,6 +104,3 @@ echo "\njulia:"
 julia hello.jl $@ && \
 julia hello.jl $@
 
-echo "\nV:"
-v run hello.v $@ && \
-v run hello.v $@

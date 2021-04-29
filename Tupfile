@@ -30,6 +30,9 @@ NODE_CXX_FLAGS = $(CXXFLAGS) -fno-exceptions
 # nim
 : nimcache/*.o | $(DEPS) |> !cc_exe |> nim_hello
 
+# v
+: hello.v | $(DEPS) |> v %f -o %o |> v_hello
+
 # go
 : hello.go | $(DEPS) |> go build -o %o %f |> go_hello
 

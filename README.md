@@ -8,6 +8,7 @@ Requirements:
 - tup
 - zig
 - nim
+- v
 - java7
 - java8
 - go
@@ -31,6 +32,7 @@ My environment:
 - tup 0.7.4
 - zig 0.2.0
 - nim 0.14.3
+- v 0.2.2 aebb551
 - java 1.7.0_72 and 1.8.0_91
 - go 1.8.0
 - rust 1.17.0-nightly (c0b7112ba 2017-03-02)
@@ -105,6 +107,10 @@ zig:
 nim:
 1330
 1330
+
+v:
+1779
+1781
 
 rust:
 1193

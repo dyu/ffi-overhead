@@ -5,7 +5,7 @@ import strconv
 #include "newplus/plus.c"
 
 fn C.plusone(int) int
-fn C.current_timestamp(int) i64
+fn C.current_timestamp() i64
 
 fn run(count int) i64 {
   mut x := 0
