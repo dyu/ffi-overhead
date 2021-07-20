@@ -32,3 +32,5 @@
 *.hi
 
 .tup
+
+zig-out

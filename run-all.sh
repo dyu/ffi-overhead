@@ -32,8 +32,8 @@ echo "\ncpp:"
 ./cpp_hello $@
 
 echo "\nzig:"
-./zig_hello $@ && \
-./zig_hello $@
+./zig_hello/zig_hello $@ && \
+./zig_hello/zig_hello $@
 
 echo "\nnim:"
 ./nim_hello $@ && \
