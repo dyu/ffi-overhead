@@ -8,6 +8,7 @@
 
 (defun run (count)
   (declare (optimize (speed 3) (debug 0) (safety 0)))
+  (check-type count (unsigned-byte 31))
   (let ((x 0)
         (start (current_timestamp)))
   (dotimes (i count)
