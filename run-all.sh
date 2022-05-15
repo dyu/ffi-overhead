@@ -55,6 +55,10 @@ echo "\nd ldc2:"
 ./d_ldc2_hello $@ && \
 ./d_ldc2_hello $@
 
+echo "\nguile:"
+guile -C ./guile -c '(use-modules (hello))(main '"$@"')' && \
+guile -C ./guile -c '(use-modules (hello))(main '"$@"')'
+
 echo "\nhaskell:"
 ./ghc_hello $@ && \
 ./ghc_hello $@
