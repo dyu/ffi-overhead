@@ -31,6 +31,10 @@ echo "\ncpp:"
 ./cpp_hello $@ && \
 ./cpp_hello $@
 
+echo "\nCommon Lisp via SBCL:"
+./hello.lisp $@ && \
+./hello.lisp $@
+
 echo "\nzig:"
 ./zig_hello/zig_hello $@ && \
 ./zig_hello/zig_hello $@
