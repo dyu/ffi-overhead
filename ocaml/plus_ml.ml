@@ -1,4 +1,5 @@
 external current_timestamp : unit -> int = "ml_current_timestamp"
+  [@@noalloc]
 
 external plusone_32_noalloc : (int32 [@unboxed]) -> (int32 [@unboxed]) =
   "ml_plusone_bc" "plusone" [@@noalloc]
